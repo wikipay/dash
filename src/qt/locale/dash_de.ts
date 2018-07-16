@@ -3957,8 +3957,8 @@ Dies kann passieren, wenn einige Dash aus ihrer Wallet bereits ausgegeben wurden
         <translation>Legt ein Prozessor-/CPU-Kernlimit fest, wenn CPU-Mining aktiviert ist (-1 = unbegrenzt, Standard: %d)</translation>
     </message>
     <message>
-        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation>Anzahl Bestätigungen  für eine erfolgreich gesperrte Transaktion (0-9999, voreingestellt: %u)</translation>
+        <source>Show N confirmations for a successfully locked transaction (0-9449, default: %u)</source>
+        <translation>Anzahl Bestätigungen  für eine erfolgreich gesperrte Transaktion (0-9449, voreingestellt: %u)</translation>
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
