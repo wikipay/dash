@@ -156,7 +156,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = false;
 
         nPoolMaxTransactions = 3;
-        nFulfilledRequestExpireTime = 24*60*60; // fulfilled requests expire in 1 hour
+        nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
         strSporkPubKey = "043b2f343571262ec9ca3c147f86c29c9bd6e453223e26bdf028784680fdd13e2063221095b0c67a432f5bfed7dc62c4a3cbc91b4d931c98c6ffb9c4ddcd7ae54e";
         strMasternodePaymentsPubKey = "043b2f343571262ec9ca3c147f86c29c9bd6e453223e26bdf028784680fdd13e2063221095b0c67a432f5bfed7dc62c4a3cbc91b4d931c98c6ffb9c4ddcd7ae54e";
 
