@@ -17,7 +17,7 @@
 
 #include "chainparamsseeds.h"
 
-static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime=1531933200, uint32_t nNonce=2174854, uint32_t nBits=0x1e0ffff0, int32_t nVersion, const CAmount& genesisReward=5000000 * COIN)
 {
     CMutableTransaction txNew;
     txNew.nVersion = 1;
@@ -51,7 +51,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "genesis block of wiki blockchain start 07/17/2018 at 16:00";
+    const char* pszTimestamp = "genesis block of wiki blockchain start today 07/18/2018 at 17:00";
     const CScript genesisOutputScript = CScript() << ParseHex("049071804051ed74a56bfc4a3d9677a795239d921d3cb6859db6410eb347283e43c24a925b4d6404edc8ff387e6bed0a5a40d5fe80813233516169888ce019c12d") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -121,10 +121,10 @@ public:
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1531843200, 35980, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1531933200, 2174854, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000bd72cb6b61f5284d5129ca3aac84d3eea9d5c54da1a817f4deee1e9f6a4"));
-        assert(genesis.hashMerkleRoot == uint256S("0x9e4d1de73c4df4e6a18a51dbcac91a61eb9ae05b37b5dcdd5bc989e6785ab1c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000563c5dfa5e08a6ae9b0f93003fd88575c9e37505681c0afc1c04b070962"));
+        assert(genesis.hashMerkleRoot == uint256S("0x84b90441c9ae76b2ca5ce322f965707e3fd56f09f1d7f27d2b3a06d4337c2fec"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -162,8 +162,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x00000bd72cb6b61f5284d5129ca3aac84d3eea9d5c54da1a817f4deee1e9f6a4")),
-            1531843200, // * UNIX timestamp of last checkpoint block
+            (  0, uint256S("0x00000563c5dfa5e08a6ae9b0f93003fd88575c9e37505681c0afc1c04b070962")),
+            1531933200, // * UNIX timestamp of last checkpoint block
             0,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             2800        // * estimated number of transactions per day after checkpoint
@@ -223,10 +223,10 @@ public:
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1531843202, 1733852, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1531933202, 341260, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000e59dc227ce754b688a228adde21e4bcd52d932453abb4f6007d3473be2c"));
-        assert(genesis.hashMerkleRoot == uint256S("0x9e4d1de73c4df4e6a18a51dbcac91a61eb9ae05b37b5dcdd5bc989e6785ab1c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000009fbffd98eabcb7fffa0611cc1267896bd87f5f48083663bb7710f53b544"));
+        assert(genesis.hashMerkleRoot == uint256S("0x84b90441c9ae76b2ca5ce322f965707e3fd56f09f1d7f27d2b3a06d4337c2fec"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -261,9 +261,9 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    0, uint256S("0x00000e59dc227ce754b688a228adde21e4bcd52d932453abb4f6007d3473be2c")),
+            (    0, uint256S("0x000009fbffd98eabcb7fffa0611cc1267896bd87f5f48083663bb7710f53b544")),
 
-            1531843202, // * UNIX timestamp of last checkpoint block
+            1531933202, // * UNIX timestamp of last checkpoint block
             0,     // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             500         // * estimated number of transactions per day after checkpoint
