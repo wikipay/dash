@@ -17,7 +17,7 @@
 
 #include "chainparamsseeds.h"
 
-static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime=1531933200, uint32_t nNonce=2174854, uint32_t nBits=0x1e0ffff0, int32_t nVersion, const CAmount& genesisReward=5000000 * COIN)
+static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime=1531933200, uint32_t nNonce=2174854, uint32_t nBits=0x1e0ffff0, int32_t nVersion, const CAmount& genesisReward=5000000)
 {
     CMutableTransaction txNew;
     txNew.nVersion = 1;
