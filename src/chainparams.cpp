@@ -17,14 +17,14 @@
 
 #include "chainparamsseeds.h"
 
-static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime=1531933200, uint32_t nNonce=2174854, uint32_t nBits=0x1e0ffff0, int32_t nVersion, const CAmount& genesisReward=5000000)
+static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime=1531933200, uint32_t nNonce=2174854, uint32_t nBits=0x1e0ffff0, int32_t nVersion, const CAmount& genesisReward)
 {
     CMutableTransaction txNew;
     txNew.nVersion = 1;
     txNew.vin.resize(1);
     txNew.vout.resize(1);
     txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-    txNew.vout[0].nValue = genesisReward;
+    txNew.vout[0].nValue = 5000000 * COIN;
     txNew.vout[0].scriptPubKey = genesisOutputScript;
 
     CBlock genesis;
